@@ -1,0 +1,24 @@
+/* width */
+#Sidebar ::-webkit-scrollbar {
+  display: none;
+  width: 2px;
+}
+#Sidebar ::-webkit-scrollbar:hover {
+  width: 2px;
+}
+
+/* Track */
+#Sidebar ::-webkit-scrollbar-track {
+  background: rgb(var(--border-color));
+}
+
+/* Handle */
+#Sidebar ::-webkit-scrollbar-thumb {
+  background: rgb(73, 95, 126);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: rgb(43, 57, 77);
+  } */
