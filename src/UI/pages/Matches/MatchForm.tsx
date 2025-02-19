@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import { ButtonContained, Container, Dialog } from "../../components";
+import { useMatches, useTeams } from "../../hooks";
 import { MatchTypes } from "./MatchPage";
 import { VetoRow } from "./VetoRow";
-import { ButtonContained, Container, Dialog } from "../../components";
-import { useTeams, useMatches } from "../../hooks";
 
 interface MatchFormProps {
   match?: Match;
@@ -78,7 +78,11 @@ export const MatchForm = ({
     return isValid;
   };
 
-  const handleVetoChange = (index: number, key: keyof Veto, value: any) => {
+  const handleVetoChange = (
+    index: number,
+    key: keyof Veto,
+    value: string | boolean,
+  ) => {
     const updatedVetos = [...vetos];
     updatedVetos[index] = { ...updatedVetos[index], [key]: value };
     setVetos(updatedVetos);
