@@ -1,9 +1,15 @@
-import { ipcMain, WebContents, WebFrameMain, Notification } from "electron";
-import { getUIPath } from "./pathResolver.js";
-import { pathToFileURL } from "url";
-import { app, shell } from "electron";
-import path from "path";
+import {
+  app,
+  ipcMain,
+  Notification,
+  shell,
+  WebContents,
+  WebFrameMain,
+} from "electron";
 import fs from "fs";
+import path from "path";
+import { pathToFileURL } from "url";
+import { getUIPath } from "./pathResolver.js";
 
 export let userHasCustomHud: boolean;
 
@@ -66,13 +72,13 @@ function createMissingDir(directory: string) {
 // Ensure we have a userData folder and a Huds folder to store custom built huds
 export function checkDirectories() {
   const userData = app.getPath("userData");
-  const customHudDir = path.join(app.getPath("home"), "OpenHud-Huds");
+  const customHudDir = path.join(app.getPath("home"), "ESN-Huds");
   [customHudDir, userData].forEach(createMissingDir);
 
   /* Check to see if the user has a custom hud loaded */
   const customHudData = path.join(
     app.getPath("home"),
-    "OpenHud-Huds/build/index.html",
+    "ESN-Huds/build/index.html",
   );
 
   if (fs.existsSync(customHudData)) {
@@ -84,12 +90,12 @@ export function checkDirectories() {
 
 export function showNotification(body: string) {
   new Notification({
-    title: "OpenHud:",
+    title: "ESN:",
     body,
   }).show();
 }
 
-export function openHudsDirectory() {
-  const customHudDir = path.join(app.getPath("home"), "OpenHud-Huds");
+export function esnsDirectory() {
+  const customHudDir = path.join(app.getPath("home"), "ESN-Huds");
   shell.openPath(customHudDir); // ✅ Correct way to open the folder
 }

@@ -1,9 +1,5 @@
 import { BrowserWindow, shell } from "electron";
-import {
-  ipcMainHandle,
-  ipcMainOn,
-  openHudsDirectory,
-} from "../helpers/index.js";
+import { esnsDirectory, ipcMainHandle, ipcMainOn } from "../helpers/index.js";
 import { createHudWindow } from "../hudWindow.js";
 import { getPlayers } from "../server/services/index.js";
 // Handle expects a response
@@ -38,7 +34,7 @@ export function ipcMainEvents(mainWindow: BrowserWindow) {
     shell.openExternal(url);
   });
 
-  ipcMainOn("openHudsDirectory", () => {
-    openHudsDirectory();
+  ipcMainOn("esnsDirectory", () => {
+    esnsDirectory();
   });
 }

@@ -1,13 +1,13 @@
 {
-  "appId": "com.openhud.electron-app",
-  "productName": "OpenHud",
+  "appId": "com.ESN.electron-app",
+  "productName": "ESN",
   "files": ["dist-electron", "dist-react"],
   "extraResources": ["dist-electron/preload.cjs", "src/assets/**"],
   "icon": "./desktopIcon.png",
   "publish": {
     "provider": "github",
     "owner": "JohnTimmermann",
-    "repo": "OpenHud",
+    "repo": "ESN",
     "releaseType": "release"
   },
   "mac": {

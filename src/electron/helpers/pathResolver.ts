@@ -1,5 +1,5 @@
-import path from "path";
 import { app } from "electron";
+import path from "path";
 import { isDev, userHasCustomHud } from "./util.js";
 
 /* Determine preload path based on if we are in dev */
@@ -7,11 +7,11 @@ export function getPreloadPath() {
   return path.join(
     app.getAppPath(),
     isDev() ? "." : "..",
-    "/dist-electron/preload.cjs"
+    "/dist-electron/preload.cjs",
   );
 }
 
-// Path to our database file (stored in appdata for openhud)
+// Path to our database file (stored in appdata for ESN)
 export function getDatabasePath() {
   return path.join(app.getPath("userData"), "database.db");
 }
@@ -27,7 +27,7 @@ export function getAssetPath() {
 }
 
 export function getCustomHudPath() {
-  return path.join(app.getPath("home"), "OpenHud-Huds/build");
+  return path.join(app.getPath("home"), "ESN-Huds/build");
 }
 
 // Default HUD path
@@ -35,7 +35,7 @@ export function getDefaultHUDPath() {
   return path.join(
     app.getAppPath(),
     isDev() ? "." : "..",
-    "/src/assets/defaultHud"
+    "/src/assets/defaultHud",
   );
 }
 

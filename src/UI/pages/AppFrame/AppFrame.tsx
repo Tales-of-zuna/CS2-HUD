@@ -1,7 +1,10 @@
 import { FaGithub } from "react-icons/fa";
 import { MdClose, MdMenu } from "react-icons/md";
-import { VscChromeMinimize, VscChromeMaximize } from "react-icons/vsc";
-import { VscDebugConsole } from "react-icons/vsc";
+import {
+  VscChromeMaximize,
+  VscChromeMinimize,
+  VscDebugConsole,
+} from "react-icons/vsc";
 
 interface AppFrameProps {
   toggleDrawer?: (open: boolean) => void;
@@ -33,7 +36,7 @@ export const AppFrame = ({ toggleDrawer }: AppFrameProps) => {
         <button
           onClick={() =>
             window.electron.openExternalLink(
-              "https://github.com/JohnTimmermann/OpenHud",
+              "https://github.com/JohnTimmermann/ESN",
             )
           }
           className="noDrag text-text-secondary transition-colors hover:text-secondary-light"

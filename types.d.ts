@@ -4,7 +4,7 @@ interface Window {
     sendFrameAction: (payload: FrameWindowAction) => void;
     startOverlay: () => void;
     openExternalLink: (url: string) => void;
-    openHudsDirectory: () => void;
+    esnsDirectory: () => void;
   };
   update: {
     updateMessage: (callback: (message: string) => void) => void;
@@ -27,7 +27,7 @@ type EventPayloadMapping = {
   openExternalLink: string;
   getPlayers: Promise<Player[]>;
   updateMessage: string;
-  openHudsDirectory: void;
+  esnsDirectory: void;
 };
 
 type FrameWindowAction = "CLOSE" | "MAXIMIZE" | "MINIMIZE" | "CONSOLE";

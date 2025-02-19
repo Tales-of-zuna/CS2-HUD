@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { ButtonContained } from "../../components";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { apiUrl } from "../../api/api";
+import { ButtonContained } from "../../components";
 
 interface SettingsProps {
   onClose: () => void;
@@ -52,7 +52,7 @@ export const Settings = ({ onClose }: SettingsProps) => {
       <div className="container flex flex-col gap-6 overflow-y-auto">
         <div className="rounded-lg bg-background-secondary p-6 shadow-md">
           <h2 className="mb-4 text-xl font-semibold">HUDs Directory</h2>
-          <ButtonContained onClick={() => window.electron.openHudsDirectory()}>
+          <ButtonContained onClick={() => window.electron.esnsDirectory()}>
             Open Directory
           </ButtonContained>
         </div>
